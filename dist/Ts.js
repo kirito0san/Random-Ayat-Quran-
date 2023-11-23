@@ -1,23 +1,11 @@
 "use strict";
-// const express = require("express");
-// const cors = require("cors");
-// const app = express();
-// // باقي الكود هنا
-// const corsOptions = {
-//   origin: "/data.json", // يمكنك تحديد مواقع محددة هنا
-//   optionsSuccessStatus: 200, // بعض المتصفحات تحتاج إلى هذا لتأكيد أن الطلب نجح
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // الطرق المسموح بها
-//   allowedHeaders: "Content-Type,Authorization", // الرؤ
-// };
-// app.use(cors(corsOptions));
-// console.log(app.use(cors(corsOptions)));
 let MyId = document.querySelector(`.id`);
 let Aya = document.querySelector(`.Aya`);
 let click = document.querySelector(`.click`);
 let names = document.querySelector(`.name`);
 let sound = document.querySelector(`.sound`);
 click.addEventListener(`click`, () => {
-    fetch("data.json")
+    fetch("https://api.alquran.cloud/v1/quran/ar.alafasy")
         .then((e) => e.json())
         .then((e) => {
         console.log(e);
@@ -30,7 +18,7 @@ click.addEventListener(`click`, () => {
         names.innerHTML = e.data.surahs[one].name;
     });
 });
-fetch("data.json")
+fetch("https://api.alquran.cloud/v1/quran/ar.alafasy")
     .then((e) => e.json())
     .then((e) => {
     let one = Math.ceil(Math.random() * 113);
