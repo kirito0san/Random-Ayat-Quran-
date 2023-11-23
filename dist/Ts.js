@@ -5,7 +5,7 @@ let click = document.querySelector(`.click`);
 let names = document.querySelector(`.name`);
 let sound = document.querySelector(`.sound`);
 click.addEventListener(`click`, () => {
-    fetch("http://api.alquran.cloud/v1/quran/ar.alafasy")
+    fetch("/data.json")
         .then((e) => e.json())
         .then((e) => {
         let one = Math.ceil(Math.random() * 113);
@@ -17,7 +17,7 @@ click.addEventListener(`click`, () => {
         names.innerHTML = e.data.surahs[one].name;
     });
 });
-fetch("http://api.alquran.cloud/v1/quran/ar.alafasy")
+fetch("/data.json")
     .then((e) => e.json())
     .then((e) => {
     let one = Math.ceil(Math.random() * 113);
