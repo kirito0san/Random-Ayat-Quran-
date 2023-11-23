@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+* {
+  @apply text-right;
+}
+.sound::-webkit-media-controls-panel {
+  @apply bg-Neon_Green;
+}
